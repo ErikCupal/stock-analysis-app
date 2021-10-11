@@ -11,6 +11,13 @@ import {
 
 import { StockDataType } from '../../types'
 
+const CHART_MARGINS = {
+  top: 10,
+  right: 30,
+  left: 0,
+  bottom: 0,
+}
+
 const xAxisTickFormatter = (value: number) => `$${value}`
 const tooltipLabelFormatter = (date: string) => `Date: ${date}`
 const tooltipFormatter = (value: number) => [
@@ -29,12 +36,7 @@ const StockAnalysisChart = memo(({ data }: StockAnalysisChartProps) => {
         width={500}
         height={400}
         data={data.rows}
-        margin={{
-          top: 10,
-          right: 30,
-          left: 0,
-          bottom: 0,
-        }}>
+        margin={CHART_MARGINS}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
         <YAxis tickFormatter={xAxisTickFormatter} />
