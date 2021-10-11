@@ -1,0 +1,59 @@
+{
+  "overrides": [
+    {
+      "files": ["**/*.{ts,tsx}"],
+      "excludedFiles": ["react-app-env.d.ts"],
+      "extends": [
+        "airbnb-typescript",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "plugins": ["@typescript-eslint", "prettier", "react-hooks", "import"],
+      "rules": {
+        "@typescript-eslint/ban-ts-ignore": "off",
+        "@typescript-eslint/camelcase": "off",
+        "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/naming-convention": "off",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "react/jsx-filename-extension": "off",
+        "react/no-multi-comp": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error",
+        "react/no-unescaped-entities": "off",
+        "react/prop-types": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/require-default-props": "off",
+        "no-console": "warn",
+        "no-restricted-syntax": "off",
+        "no-nested-ternary": "off",
+        "prettier/prettier": "warn",
+        "import/prefer-default-export": "off",
+        "import/order": [
+          "warn",
+          {
+            "groups": [
+              "builtin",
+              "external",
+              "unknown",
+              "internal",
+              ["parent", "sibling", "index", "object"]
+            ],
+            "newlines-between": "always",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
